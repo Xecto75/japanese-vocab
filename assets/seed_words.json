@@ -1,0 +1,96 @@
+{
+  "lists": [
+    {
+      "id": "core_verbs",
+      "name": "Core Verbs",
+      "words": [
+        { "id": "suru", "kanji": "する", "reading": "", "english": "to do", "examples": [] },
+        { "id": "iku", "kanji": "行く", "reading": "いく", "english": "to go", "examples": [] },
+        { "id": "kuru", "kanji": "来る", "reading": "くる", "english": "to come", "examples": [] },
+        { "id": "miru", "kanji": "見る", "reading": "みる", "english": "to see; to watch", "examples": [] },
+        { "id": "kiku", "kanji": "聞く", "reading": "きく", "english": "to hear; to listen", "examples": [] },
+        { "id": "iu", "kanji": "言う", "reading": "いう", "english": "to say", "examples": [] },
+        { "id": "taberu", "kanji": "食べる", "reading": "たべる", "english": "to eat", "examples": [] },
+        { "id": "nomu", "kanji": "飲む", "reading": "のむ", "english": "to drink", "examples": [] },
+        { "id": "kau", "kanji": "買う", "reading": "かう", "english": "to buy", "examples": [] },
+        { "id": "ageru", "kanji": "上げる", "reading": "あげる", "english": "to give", "examples": [] },
+        { "id": "motsu", "kanji": "持つ", "reading": "もつ", "english": "to have; to hold", "examples": [] },
+        { "id": "wakaru", "kanji": "分かる", "reading": "わかる", "english": "to understand", "examples": [] }
+      ]
+    },
+
+    {
+      "id": "people",
+      "name": "People & Pronouns",
+      "words": [
+        { "id": "watashi", "kanji": "私", "reading": "わたし", "english": "I; me", "examples": [] },
+        { "id": "anata", "kanji": "あなた", "reading": "あなた", "english": "you", "examples": [] },
+        { "id": "hito", "kanji": "人", "reading": "ひと", "english": "person", "examples": [] },
+        { "id": "tomodachi", "kanji": "友達", "reading": "ともだち", "english": "friend", "examples": [] },
+        { "id": "sensei", "kanji": "先生", "reading": "せんせい", "english": "teacher", "examples": [] },
+        { "id": "gakusei", "kanji": "学生", "reading": "がくせい", "english": "student", "examples": [] }
+      ]
+    },
+
+    {
+      "id": "food",
+      "name": "Food & Drink",
+      "words": [
+        { "id": "gohan", "kanji": "ご飯", "reading": "ごはん", "english": "rice; meal", "examples": [] },
+        { "id": "pan", "kanji": "パン", "reading": "", "english": "bread", "examples": [] },
+        { "id": "mizu", "kanji": "水", "reading": "みず", "english": "water", "examples": [] },
+        { "id": "ocha", "kanji": "お茶", "reading": "おちゃ", "english": "tea", "examples": [] },
+        { "id": "niku", "kanji": "肉", "reading": "にく", "english": "meat", "examples": [] },
+        { "id": "yasai", "kanji": "野菜", "reading": "やさい", "english": "vegetable", "examples": [] }
+      ]
+    },
+
+    {
+      "id": "places",
+      "name": "Places",
+      "words": [
+        { "id": "ie", "kanji": "家", "reading": "いえ", "english": "house; home", "examples": [] },
+        { "id": "gakkou", "kanji": "学校", "reading": "がっこう", "english": "school", "examples": [] },
+        { "id": "eki", "kanji": "駅", "reading": "えき", "english": "station", "examples": [] },
+        { "id": "mise", "kanji": "店", "reading": "みせ", "english": "shop", "examples": [] },
+        { "id": "kaisha", "kanji": "会社", "reading": "かいしゃ", "english": "company", "examples": [] }
+      ]
+    },
+
+    {
+      "id": "time",
+      "name": "Time & Frequency",
+      "words": [
+        { "id": "ima", "kanji": "今", "reading": "いま", "english": "now", "examples": [] },
+        { "id": "kyou", "kanji": "今日", "reading": "きょう", "english": "today", "examples": [] },
+        { "id": "ashita", "kanji": "明日", "reading": "あした", "english": "tomorrow", "examples": [] },
+        { "id": "mainichi", "kanji": "毎日", "reading": "まいにち", "english": "every day", "examples": [] },
+        { "id": "yoku", "kanji": "よく", "reading": "", "english": "often", "examples": [] }
+      ]
+    },
+
+    {
+      "id": "adjectives",
+      "name": "Adjectives",
+      "words": [
+        { "id": "ii", "kanji": "いい", "reading": "", "english": "good", "examples": [] },
+        { "id": "warui", "kanji": "悪い", "reading": "わるい", "english": "bad", "examples": [] },
+        { "id": "ookii", "kanji": "大きい", "reading": "おおきい", "english": "big", "examples": [] },
+        { "id": "chiisai", "kanji": "小さい", "reading": "ちいさい", "english": "small", "examples": [] },
+        { "id": "atarashii", "kanji": "新しい", "reading": "あたらしい", "english": "new", "examples": [] }
+      ]
+    },
+
+    {
+      "id": "expressions",
+      "name": "Common Expressions",
+      "words": [
+        { "id": "arigatou", "kanji": "ありがとう", "reading": "", "english": "thank you", "examples": [] },
+        { "id": "sumimasen", "kanji": "すみません", "reading": "", "english": "excuse me; sorry", "examples": [] },
+        { "id": "hai", "kanji": "はい", "reading": "", "english": "yes", "examples": [] },
+        { "id": "iie", "kanji": "いいえ", "reading": "", "english": "no", "examples": [] },
+        { "id": "daijoubu", "kanji": "大丈夫", "reading": "だいじょうぶ", "english": "okay; alright", "examples": [] }
+      ]
+    }
+  ]
+}
