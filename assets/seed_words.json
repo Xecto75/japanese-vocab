@@ -4,56 +4,297 @@
       "id": "core_verbs",
       "name": "Core Verbs",
       "words": [
-        { "id": "suru", "kanji": "する", "reading": "", "english": "to do", "examples": [] },
-        { "id": "iku", "kanji": "行く", "reading": "いく", "english": "to go", "examples": [] },
-        { "id": "kuru", "kanji": "来る", "reading": "くる", "english": "to come", "examples": [] },
-        { "id": "miru", "kanji": "見る", "reading": "みる", "english": "to see; to watch", "examples": [] },
-        { "id": "kiku", "kanji": "聞く", "reading": "きく", "english": "to hear; to listen", "examples": [] },
-        { "id": "iu", "kanji": "言う", "reading": "いう", "english": "to say", "examples": [] },
-        { "id": "taberu", "kanji": "食べる", "reading": "たべる", "english": "to eat", "examples": [] },
-        { "id": "nomu", "kanji": "飲む", "reading": "のむ", "english": "to drink", "examples": [] },
-        { "id": "kau", "kanji": "買う", "reading": "かう", "english": "to buy", "examples": [] },
-        { "id": "ageru", "kanji": "上げる", "reading": "あげる", "english": "to give", "examples": [] },
-        { "id": "motsu", "kanji": "持つ", "reading": "もつ", "english": "to have; to hold", "examples": [] },
-        { "id": "wakaru", "kanji": "分かる", "reading": "わかる", "english": "to understand", "examples": [] }
+        {
+          "id": "suru",
+          "kanji": "する",
+          "reading": "",
+          "english": "to do",
+          "examples": [
+            { "jp": "宿題をします。", "en": "I do my homework." }
+          ]
+        },
+        {
+          "id": "iku",
+          "kanji": "行く",
+          "reading": "いく",
+          "english": "to go",
+          "examples": [
+            { "jp": "学校へ行きます。", "en": "I go to school." }
+          ]
+        },
+        {
+          "id": "kuru",
+          "kanji": "来る",
+          "reading": "くる",
+          "english": "to come",
+          "examples": [
+            { "jp": "友達が来ます。", "en": "A friend comes." }
+          ]
+        },
+        {
+          "id": "miru",
+          "kanji": "見る",
+          "reading": "みる",
+          "english": "to see; to watch",
+          "examples": [
+            { "jp": "テレビを見ます。", "en": "I watch TV." }
+          ]
+        },
+        {
+          "id": "kiku",
+          "kanji": "聞く",
+          "reading": "きく",
+          "english": "to hear; to listen",
+          "examples": [
+            { "jp": "音楽を聞きます。", "en": "I listen to music." }
+          ]
+        },
+        {
+          "id": "hanasu",
+          "kanji": "話す",
+          "reading": "はなす",
+          "english": "to speak; to talk",
+          "examples": [
+            { "jp": "日本語を話します。", "en": "I speak Japanese." }
+          ]
+        },
+        {
+          "id": "taberu",
+          "kanji": "食べる",
+          "reading": "たべる",
+          "english": "to eat",
+          "examples": [
+            { "jp": "パンを食べます。", "en": "I eat bread." }
+          ]
+        },
+        {
+          "id": "nomu",
+          "kanji": "飲む",
+          "reading": "のむ",
+          "english": "to drink",
+          "examples": [
+            { "jp": "水を飲みます。", "en": "I drink water." }
+          ]
+        },
+        {
+          "id": "kau",
+          "kanji": "買う",
+          "reading": "かう",
+          "english": "to buy",
+          "examples": [
+            { "jp": "本を買います。", "en": "I buy a book." }
+          ]
+        },
+        {
+          "id": "ageru",
+          "kanji": "あげる",
+          "reading": "",
+          "english": "to give",
+          "examples": [
+            { "jp": "友達にプレゼントをあげます。", "en": "I give a present to my friend." }
+          ]
+        },
+        {
+          "id": "motsu",
+          "kanji": "持つ",
+          "reading": "もつ",
+          "english": "to have; to hold",
+          "examples": [
+            { "jp": "かばんを持ちます。", "en": "I hold a bag." }
+          ]
+        },
+        {
+          "id": "wakaru",
+          "kanji": "分かる",
+          "reading": "わかる",
+          "english": "to understand",
+          "examples": [
+            { "jp": "日本語が分かります。", "en": "I understand Japanese." }
+          ]
+        }
       ]
     },
 
     {
-      "id": "people",
-      "name": "People & Pronouns",
+      "id": "core_nouns",
+      "name": "Core Nouns",
       "words": [
-        { "id": "watashi", "kanji": "私", "reading": "わたし", "english": "I; me", "examples": [] },
-        { "id": "anata", "kanji": "あなた", "reading": "あなた", "english": "you", "examples": [] },
-        { "id": "hito", "kanji": "人", "reading": "ひと", "english": "person", "examples": [] },
-        { "id": "tomodachi", "kanji": "友達", "reading": "ともだち", "english": "friend", "examples": [] },
-        { "id": "sensei", "kanji": "先生", "reading": "せんせい", "english": "teacher", "examples": [] },
-        { "id": "gakusei", "kanji": "学生", "reading": "がくせい", "english": "student", "examples": [] }
+        {
+          "id": "hon",
+          "kanji": "本",
+          "reading": "ほん",
+          "english": "book",
+          "examples": [
+            { "jp": "本を読みます。", "en": "I read a book." }
+          ]
+        },
+        {
+          "id": "kuruma",
+          "kanji": "車",
+          "reading": "くるま",
+          "english": "car",
+          "examples": [
+            { "jp": "車で行きます。", "en": "I go by car." }
+          ]
+        },
+        {
+          "id": "denwa",
+          "kanji": "電話",
+          "reading": "でんわ",
+          "english": "phone",
+          "examples": [
+            { "jp": "電話をします。", "en": "I make a phone call." }
+          ]
+        },
+        {
+          "id": "kasa",
+          "kanji": "かさ",
+          "reading": "",
+          "english": "umbrella",
+          "examples": [
+            { "jp": "かさを持ちます。", "en": "I carry an umbrella." }
+          ]
+        },
+        {
+          "id": "kagi",
+          "kanji": "かぎ",
+          "reading": "",
+          "english": "key",
+          "examples": [
+            { "jp": "かぎがあります。", "en": "I have a key." }
+          ]
+        },
+        {
+          "id": "baggu",
+          "kanji": "バッグ",
+          "reading": "",
+          "english": "bag",
+          "examples": [
+            { "jp": "バッグを持ちます。", "en": "I carry a bag." }
+          ]
+        },
+        {
+          "id": "isu",
+          "kanji": "いす",
+          "reading": "",
+          "english": "chair",
+          "examples": [
+            { "jp": "いすにすわります。", "en": "I sit on a chair." }
+          ]
+        },
+        {
+          "id": "tsukue",
+          "kanji": "机",
+          "reading": "つくえ",
+          "english": "desk",
+          "examples": [
+            { "jp": "机の上です。", "en": "It is on the desk." }
+          ]
+        }
       ]
     },
 
     {
-      "id": "food",
-      "name": "Food & Drink",
+      "id": "core_adjectives",
+      "name": "Core Adjectives",
       "words": [
-        { "id": "gohan", "kanji": "ご飯", "reading": "ごはん", "english": "rice; meal", "examples": [] },
-        { "id": "pan", "kanji": "パン", "reading": "", "english": "bread", "examples": [] },
-        { "id": "mizu", "kanji": "水", "reading": "みず", "english": "water", "examples": [] },
-        { "id": "ocha", "kanji": "お茶", "reading": "おちゃ", "english": "tea", "examples": [] },
-        { "id": "niku", "kanji": "肉", "reading": "にく", "english": "meat", "examples": [] },
-        { "id": "yasai", "kanji": "野菜", "reading": "やさい", "english": "vegetable", "examples": [] }
+        {
+          "id": "ii",
+          "kanji": "いい",
+          "reading": "",
+          "english": "good",
+          "examples": [
+            { "jp": "この本はいいです。", "en": "This book is good." }
+          ]
+        },
+        {
+          "id": "warui",
+          "kanji": "悪い",
+          "reading": "わるい",
+          "english": "bad",
+          "examples": [
+            { "jp": "天気が悪いです。", "en": "The weather is bad." }
+          ]
+        },
+        {
+          "id": "takai",
+          "kanji": "高い",
+          "reading": "たかい",
+          "english": "expensive; tall",
+          "examples": [
+            { "jp": "この店は高いです。", "en": "This shop is expensive." }
+          ]
+        },
+        {
+          "id": "yasui",
+          "kanji": "安い",
+          "reading": "やすい",
+          "english": "cheap",
+          "examples": [
+            { "jp": "このパンは安いです。", "en": "This bread is cheap." }
+          ]
+        },
+        {
+          "id": "atsui",
+          "kanji": "暑い",
+          "reading": "あつい",
+          "english": "hot (weather)",
+          "examples": [
+            { "jp": "今日は暑いです。", "en": "It is hot today." }
+          ]
+        }
       ]
     },
 
     {
-      "id": "places",
-      "name": "Places",
+      "id": "particles",
+      "name": "Particles",
       "words": [
-        { "id": "ie", "kanji": "家", "reading": "いえ", "english": "house; home", "examples": [] },
-        { "id": "gakkou", "kanji": "学校", "reading": "がっこう", "english": "school", "examples": [] },
-        { "id": "eki", "kanji": "駅", "reading": "えき", "english": "station", "examples": [] },
-        { "id": "mise", "kanji": "店", "reading": "みせ", "english": "shop", "examples": [] },
-        { "id": "kaisha", "kanji": "会社", "reading": "かいしゃ", "english": "company", "examples": [] }
+        {
+          "id": "wa",
+          "kanji": "は",
+          "reading": "は",
+          "english": "topic marker (wa)",
+          "examples": [
+            { "jp": "私は学生です。", "en": "I am a student." }
+          ]
+        },
+        {
+          "id": "o",
+          "kanji": "を",
+          "reading": "を",
+          "english": "object marker",
+          "examples": [
+            { "jp": "パンを食べます。", "en": "I eat bread." }
+          ]
+        },
+        {
+          "id": "ni",
+          "kanji": "に",
+          "reading": "に",
+          "english": "to; at",
+          "examples": [
+            { "jp": "学校に行きます。", "en": "I go to school." }
+          ]
+        },
+        {
+          "id": "de",
+          "kanji": "で",
+          "reading": "で",
+          "english": "at; by",
+          "examples": [
+            { "jp": "電車で行きます。", "en": "I go by train." }
+          ]
+        },
+        {
+          "id": "to",
+          "kanji": "と",
+          "reading": "と",
+          "english": "and; with",
+          "examples": [
+            { "jp": "友達と行きます。", "en": "I go with a friend." }
+          ]
+        }
       ]
     },
 
@@ -61,35 +302,993 @@
       "id": "time",
       "name": "Time & Frequency",
       "words": [
-        { "id": "ima", "kanji": "今", "reading": "いま", "english": "now", "examples": [] },
-        { "id": "kyou", "kanji": "今日", "reading": "きょう", "english": "today", "examples": [] },
-        { "id": "ashita", "kanji": "明日", "reading": "あした", "english": "tomorrow", "examples": [] },
-        { "id": "mainichi", "kanji": "毎日", "reading": "まいにち", "english": "every day", "examples": [] },
-        { "id": "yoku", "kanji": "よく", "reading": "", "english": "often", "examples": [] }
+        {
+          "id": "ima",
+          "kanji": "今",
+          "reading": "いま",
+          "english": "now",
+          "examples": [
+            { "jp": "今、勉強しています。", "en": "I am studying now." }
+          ]
+        },
+        {
+          "id": "kyou",
+          "kanji": "今日",
+          "reading": "きょう",
+          "english": "today",
+          "examples": [
+            { "jp": "今日は忙しいです。", "en": "Today is busy." }
+          ]
+        },
+        {
+          "id": "ashita",
+          "kanji": "明日",
+          "reading": "あした",
+          "english": "tomorrow",
+          "examples": [
+            { "jp": "明日テストがあります。", "en": "There is a test tomorrow." }
+          ]
+        },
+        {
+          "id": "senshuu",
+          "kanji": "先週",
+          "reading": "せんしゅう",
+          "english": "last week",
+          "examples": [
+            { "jp": "先週日本に行きました。", "en": "I went to Japan last week." }
+          ]
+        },
+        {
+          "id": "konshuu",
+          "kanji": "今週",
+          "reading": "こんしゅう",
+          "english": "this week",
+          "examples": [
+            { "jp": "今週は忙しいです。", "en": "This week is busy." }
+          ]
+        },
+        {
+          "id": "maishuu",
+          "kanji": "毎週",
+          "reading": "まいしゅう",
+          "english": "every week",
+          "examples": [
+            { "jp": "毎週日本語を勉強します。", "en": "I study Japanese every week." }
+          ]
+        },
+        {
+          "id": "maitsuki",
+          "kanji": "毎月",
+          "reading": "まいつき",
+          "english": "every month",
+          "examples": [
+            { "jp": "毎月家族に電話します。", "en": "I call my family every month." }
+          ]
+        },
+        {
+          "id": "shuumatsu",
+          "kanji": "週末",
+          "reading": "しゅうまつ",
+          "english": "weekend",
+          "examples": [
+            { "jp": "週末は休みます。", "en": "I rest on the weekend." }
+          ]
+        }
       ]
     },
 
     {
-      "id": "adjectives",
-      "name": "Adjectives",
+      "id": "days",
+      "name": "Days of the Week",
       "words": [
-        { "id": "ii", "kanji": "いい", "reading": "", "english": "good", "examples": [] },
-        { "id": "warui", "kanji": "悪い", "reading": "わるい", "english": "bad", "examples": [] },
-        { "id": "ookii", "kanji": "大きい", "reading": "おおきい", "english": "big", "examples": [] },
-        { "id": "chiisai", "kanji": "小さい", "reading": "ちいさい", "english": "small", "examples": [] },
-        { "id": "atarashii", "kanji": "新しい", "reading": "あたらしい", "english": "new", "examples": [] }
+        {
+          "id": "getsuyoubi",
+          "kanji": "月曜日",
+          "reading": "げつようび",
+          "english": "Monday",
+          "examples": [
+            { "jp": "月曜日に学校へ行きます。", "en": "I go to school on Monday." }
+          ]
+        },
+        {
+          "id": "kayoubi",
+          "kanji": "火曜日",
+          "reading": "かようび",
+          "english": "Tuesday",
+          "examples": [
+            { "jp": "火曜日は忙しいです。", "en": "Tuesday is busy." }
+          ]
+        },
+        {
+          "id": "suiyoubi",
+          "kanji": "水曜日",
+          "reading": "すいようび",
+          "english": "Wednesday",
+          "examples": [
+            { "jp": "水曜日にテストがあります。", "en": "There is a test on Wednesday." }
+          ]
+        },
+        {
+          "id": "mokuyoubi",
+          "kanji": "木曜日",
+          "reading": "もくようび",
+          "english": "Thursday",
+          "examples": [
+            { "jp": "木曜日に友達と会います。", "en": "I meet my friend on Thursday." }
+          ]
+        },
+        {
+          "id": "kinyoubi",
+          "kanji": "金曜日",
+          "reading": "きんようび",
+          "english": "Friday",
+          "examples": [
+            { "jp": "金曜日は楽しいです。", "en": "Friday is fun." }
+          ]
+        },
+        {
+          "id": "doyoubi",
+          "kanji": "土曜日",
+          "reading": "どようび",
+          "english": "Saturday",
+          "examples": [
+            { "jp": "土曜日に映画を見ます。", "en": "I watch a movie on Saturday." }
+          ]
+        },
+        {
+          "id": "nichiyoubi",
+          "kanji": "日曜日",
+          "reading": "にちようび",
+          "english": "Sunday",
+          "examples": [
+            { "jp": "日曜日は休みです。", "en": "Sunday is a day off." }
+          ]
+        }
+      ]
+    },
+
+
+    {
+      "id": "numbers",
+      "name": "Numbers",
+      "words": [
+        {
+          "id": "zero",
+          "kanji": "零",
+          "reading": "ゼロ",
+          "english": "zero",
+          "examples": [
+            { "jp": "ゼロから始めます。", "en": "I start from zero." }
+          ]
+        },
+        {
+          "id": "ichi",
+          "kanji": "一",
+          "reading": "いち",
+          "english": "one",
+          "examples": [
+            { "jp": "りんごが一つあります。", "en": "There is one apple." }
+          ]
+        },
+        {
+          "id": "ni",
+          "kanji": "二",
+          "reading": "に",
+          "english": "two",
+          "examples": [
+            { "jp": "二人います。", "en": "There are two people." }
+          ]
+        },
+        {
+          "id": "san",
+          "kanji": "三",
+          "reading": "さん",
+          "english": "three",
+          "examples": [
+            { "jp": "三冊の本があります。", "en": "There are three books." }
+          ]
+        },
+        {
+          "id": "yon",
+          "kanji": "四",
+          "reading": "よん",
+          "english": "four",
+          "examples": [
+            { "jp": "四時です。", "en": "It is four o'clock." }
+          ]
+        },
+        {
+          "id": "go",
+          "kanji": "五",
+          "reading": "ご",
+          "english": "five",
+          "examples": [
+            { "jp": "五人います。", "en": "There are five people." }
+          ]
+        },
+        {
+          "id": "roku",
+          "kanji": "六",
+          "reading": "ろく",
+          "english": "six",
+          "examples": [
+            { "jp": "六つください。", "en": "Please give me six." }
+          ]
+        },
+        {
+          "id": "nana",
+          "kanji": "七",
+          "reading": "なな",
+          "english": "seven",
+          "examples": [
+            { "jp": "七時に起きます。", "en": "I wake up at seven." }
+          ]
+        },
+        {
+          "id": "hachi",
+          "kanji": "八",
+          "reading": "はち",
+          "english": "eight",
+          "examples": [
+            { "jp": "八人います。", "en": "There are eight people." }
+          ]
+        },
+        {
+          "id": "kyuu",
+          "kanji": "九",
+          "reading": "きゅう",
+          "english": "nine",
+          "examples": [
+            { "jp": "九時です。", "en": "It is nine o'clock." }
+          ]
+        },
+        {
+          "id": "juu",
+          "kanji": "十",
+          "reading": "じゅう",
+          "english": "ten",
+          "examples": [
+            { "jp": "十人います。", "en": "There are ten people." }
+          ]
+        }
+      ]
+    },
+
+
+    {
+      "id": "people",
+      "name": "People & Pronouns",
+      "words": [
+          {
+            "id": "watashi",
+            "kanji": "私",
+            "reading": "わたし",
+            "english": "I; me",
+            "examples": [
+              { "jp": "私は学生です。", "en": "I am a student." }
+            ]
+          },
+          {
+            "id": "anata",
+            "kanji": "あなた",
+            "reading": "あなた",
+            "english": "you",
+            "examples": [
+              { "jp": "あなたは先生ですか。", "en": "Are you a teacher?" }
+            ]
+          },
+          {
+            "id": "tomodachi",
+            "kanji": "友達",
+            "reading": "ともだち",
+            "english": "friend",
+            "examples": [
+              { "jp": "友達と話します。", "en": "I talk with a friend." }
+            ]
+          },
+          {
+            "id": "sensei",
+            "kanji": "先生",
+            "reading": "せんせい",
+            "english": "teacher",
+            "examples": [
+              { "jp": "先生に聞きます。", "en": "I ask the teacher." }
+            ]
+          },
+          {
+            "id": "gakusei",
+            "kanji": "学生",
+            "reading": "がくせい",
+            "english": "student",
+            "examples": [
+              { "jp": "学生です。", "en": "I am a student." }
+            ]
+          }
       ]
     },
 
     {
-      "id": "expressions",
-      "name": "Common Expressions",
+      "id": "greetings",
+      "name": "Greetings",
       "words": [
-        { "id": "arigatou", "kanji": "ありがとう", "reading": "", "english": "thank you", "examples": [] },
-        { "id": "sumimasen", "kanji": "すみません", "reading": "", "english": "excuse me; sorry", "examples": [] },
-        { "id": "hai", "kanji": "はい", "reading": "", "english": "yes", "examples": [] },
-        { "id": "iie", "kanji": "いいえ", "reading": "", "english": "no", "examples": [] },
-        { "id": "daijoubu", "kanji": "大丈夫", "reading": "だいじょうぶ", "english": "okay; alright", "examples": [] }
+          {
+            "id": "ohayou",
+            "kanji": "おはよう",
+            "reading": "",
+            "english": "good morning",
+            "examples": [
+              { "jp": "おはよう、先生。", "en": "Good morning, teacher." }
+            ]
+          },
+          {
+            "id": "konnichiwa",
+            "kanji": "こんにちは",
+            "reading": "",
+            "english": "hello",
+            "examples": [
+              { "jp": "こんにちは！", "en": "Hello!" }
+            ]
+          },
+          {
+            "id": "konbanwa",
+            "kanji": "こんばんは",
+            "reading": "",
+            "english": "good evening",
+            "examples": [
+              { "jp": "こんばんは。", "en": "Good evening." }
+            ]
+          },
+          {
+            "id": "sayounara",
+            "kanji": "さようなら",
+            "reading": "",
+            "english": "goodbye",
+            "examples": [
+              { "jp": "さようなら、またね。", "en": "Goodbye, see you." }
+            ]
+          },
+          {
+            "id": "arigatou",
+            "kanji": "ありがとう",
+            "reading": "",
+            "english": "thank you",
+            "examples": [
+              { "jp": "ありがとう。", "en": "Thank you." }
+            ]
+          }
+      ]
+    },
+
+    {
+      "id": "food",
+      "name": "Food & Drink",
+      "words": [
+          {
+            "id": "gohan",
+            "kanji": "ご飯",
+            "reading": "ごはん",
+            "english": "rice; meal",
+            "examples": [
+              { "jp": "ご飯を食べます。", "en": "I eat rice." }
+            ]
+          },
+          {
+            "id": "pan",
+            "kanji": "パン",
+            "reading": "",
+            "english": "bread",
+            "examples": [
+              { "jp": "パンを食べます。", "en": "I eat bread." }
+            ]
+          },
+          {
+            "id": "mizu",
+            "kanji": "水",
+            "reading": "みず",
+            "english": "water",
+            "examples": [
+              { "jp": "水を飲みます。", "en": "I drink water." }
+            ]
+          },
+          {
+            "id": "ocha",
+            "kanji": "お茶",
+            "reading": "おちゃ",
+            "english": "tea",
+            "examples": [
+              { "jp": "お茶を飲みます。", "en": "I drink tea." }
+            ]
+          },
+          {
+            "id": "niku",
+            "kanji": "肉",
+            "reading": "にく",
+            "english": "meat",
+            "examples": [
+              { "jp": "肉を食べます。", "en": "I eat meat." }
+            ]
+          }
+      ]
+    },
+
+    {
+      "id": "daily_life",
+      "name": "Daily Life",
+      "words": [
+          {
+            "id": "benkyou",
+            "kanji": "勉強",
+            "reading": "べんきょう",
+            "english": "study",
+            "examples": [
+              { "jp": "日本語を勉強します。", "en": "I study Japanese." }
+            ]
+          },
+          {
+            "id": "shigoto",
+            "kanji": "仕事",
+            "reading": "しごと",
+            "english": "work",
+            "examples": [
+              { "jp": "仕事をします。", "en": "I work." }
+            ]
+          },
+          {
+            "id": "yasumi",
+            "kanji": "休み",
+            "reading": "やすみ",
+            "english": "rest; day off",
+            "examples": [
+              { "jp": "今日は休みです。", "en": "Today is a day off." }
+            ]
+          },
+          {
+            "id": "kaimono",
+            "kanji": "買い物",
+            "reading": "かいもの",
+            "english": "shopping",
+            "examples": [
+              { "jp": "買い物に行きます。", "en": "I go shopping." }
+            ]
+          },
+          {
+            "id": "ryouri",
+            "kanji": "料理",
+            "reading": "りょうり",
+            "english": "cooking",
+            "examples": [
+              { "jp": "料理をします。", "en": "I cook." }
+            ]
+          }
+       ]
+    },
+    {
+      "id": "places_basic",
+      "name": "Places (Basic)",
+      "words": [
+        {
+          "id": "ie",
+          "kanji": "家",
+          "reading": "いえ",
+          "english": "house; home",
+          "examples": [
+            { "jp": "家に帰ります。", "en": "I go home." }
+          ]
+        },
+        {
+          "id": "gakkou",
+          "kanji": "学校",
+          "reading": "がっこう",
+          "english": "school",
+          "examples": [
+            { "jp": "学校に行きます。", "en": "I go to school." }
+          ]
+        },
+        {
+          "id": "mise",
+          "kanji": "店",
+          "reading": "みせ",
+          "english": "store",
+          "examples": [
+            { "jp": "店でパンを買います。", "en": "I buy bread at the store." }
+          ]
+        },
+        {
+          "id": "kouen",
+          "kanji": "公園",
+          "reading": "こうえん",
+          "english": "park",
+          "examples": [
+            { "jp": "公園で遊びます。", "en": "I play in the park." }
+          ]
+        },
+        {
+          "id": "toshokan",
+          "kanji": "図書館",
+          "reading": "としょかん",
+          "english": "library",
+          "examples": [
+            { "jp": "図書館で勉強します。", "en": "I study at the library." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "transportation",
+      "name": "Transportation",
+      "words": [
+        {
+          "id": "densha",
+          "kanji": "電車",
+          "reading": "でんしゃ",
+          "english": "train",
+          "examples": [
+            { "jp": "電車で行きます。", "en": "I go by train." }
+          ]
+        },
+        {
+          "id": "basu",
+          "kanji": "バス",
+          "reading": "",
+          "english": "bus",
+          "examples": [
+            { "jp": "バスに乗ります。", "en": "I take the bus." }
+          ]
+        },
+        {
+          "id": "kuruma",
+          "kanji": "車",
+          "reading": "くるま",
+          "english": "car",
+          "examples": [
+            { "jp": "車で会社に行きます。", "en": "I go to work by car." }
+          ]
+        },
+        {
+          "id": "jitensha",
+          "kanji": "自転車",
+          "reading": "じてんしゃ",
+          "english": "bicycle",
+          "examples": [
+            { "jp": "自転車で学校に行きます。", "en": "I go to school by bike." }
+          ]
+        },
+        {
+          "id": "aruku",
+          "kanji": "歩く",
+          "reading": "あるく",
+          "english": "to walk",
+          "examples": [
+            { "jp": "駅まで歩きます。", "en": "I walk to the station." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "family",
+      "name": "Family",
+      "words": [
+        {
+          "id": "chichi",
+          "kanji": "父",
+          "reading": "ちち",
+          "english": "father; dad (my)",
+          "examples": [
+            { "jp": "父は会社で働いています。", "en": "My father works at a company." }
+          ]
+        },
+        {
+          "id": "haha",
+          "kanji": "母",
+          "reading": "はは",
+          "english": "mother; mom (my)",
+          "examples": [
+            { "jp": "母は料理が好きです。", "en": "My mother likes cooking." }
+          ]
+        },
+        {
+          "id": "ani",
+          "kanji": "兄",
+          "reading": "あに",
+          "english": "older brother",
+          "examples": [
+            { "jp": "兄は大学生です。", "en": "My older brother is a university student." }
+          ]
+        },
+        {
+          "id": "ane",
+          "kanji": "姉",
+          "reading": "あね",
+          "english": "older sister",
+          "examples": [
+            { "jp": "姉は看護師です。", "en": "My older sister is a nurse." }
+          ]
+        },
+        {
+          "id": "otouto",
+          "kanji": "弟",
+          "reading": "おとうと",
+          "english": "younger brother",
+          "examples": [
+            { "jp": "弟は高校生です。", "en": "My younger brother is a high school student." }
+          ]
+        },
+        {
+          "id": "imouto",
+          "kanji": "妹",
+          "reading": "いもうと",
+          "english": "younger sister",
+          "examples": [
+            { "jp": "妹はかわいいです。", "en": "My younger sister is cute." }
+          ]
+        },
+        {
+          "id": "kazoku",
+          "kanji": "家族",
+          "reading": "かぞく",
+          "english": "family",
+          "examples": [
+            { "jp": "家族と住んでいます。", "en": "I live with my family." }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "descriptions",
+      "name": "Descriptions",
+      "words": [
+        {
+          "id": "atsui",
+          "kanji": "暑い",
+          "reading": "あつい",
+          "english": "hot (weather)",
+          "examples": [
+            { "jp": "今日は暑いです。", "en": "It is hot today." }
+          ]
+        },
+        {
+          "id": "samui",
+          "kanji": "寒い",
+          "reading": "さむい",
+          "english": "cold",
+          "examples": [
+            { "jp": "今日は寒いです。", "en": "It is cold today." }
+          ]
+        },
+        {
+          "id": "isogashii",
+          "kanji": "忙しい",
+          "reading": "いそがしい",
+          "english": "busy",
+          "examples": [
+            { "jp": "今日は忙しいです。", "en": "I am busy today." }
+          ]
+        },
+        {
+          "id": "tanoshii",
+          "kanji": "楽しい",
+          "reading": "たのしい",
+          "english": "fun",
+          "examples": [
+            { "jp": "日本語は楽しいです。", "en": "Japanese is fun." }
+          ]
+        },
+        {
+          "id": "muzukashii",
+          "kanji": "難しい",
+          "reading": "むずかしい",
+          "english": "difficult",
+          "examples": [
+            { "jp": "漢字は難しいです。", "en": "Kanji is difficult." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "location_words",
+      "name": "Location Words",
+      "words": [
+        {
+          "id": "ue",
+          "kanji": "上",
+          "reading": "うえ",
+          "english": "on; above",
+          "examples": [
+            { "jp": "机の上に本があります。", "en": "There is a book on the desk." }
+          ]
+        },
+        {
+          "id": "shita",
+          "kanji": "下",
+          "reading": "した",
+          "english": "under; below",
+          "examples": [
+            { "jp": "いすの下にねこがいます。", "en": "There is a cat under the chair." }
+          ]
+        },
+        {
+          "id": "naka",
+          "kanji": "中",
+          "reading": "なか",
+          "english": "inside",
+          "examples": [
+            { "jp": "かばんの中にあります。", "en": "It is inside the bag." }
+          ]
+        },
+        {
+          "id": "chikaku",
+          "kanji": "近く",
+          "reading": "ちかく",
+          "english": "near",
+          "examples": [
+            { "jp": "駅の近くです。", "en": "It is near the station." }
+          ]
+        },
+        {
+          "id": "tonari",
+          "kanji": "隣",
+          "reading": "となり",
+          "english": "next to",
+          "examples": [
+            { "jp": "隣に店があります。", "en": "There is a store next door." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "places_advanced",
+      "name": "Places (Advanced)",
+      "words": [
+        {
+          "id": "ginkou",
+          "kanji": "銀行",
+          "reading": "ぎんこう",
+          "english": "bank",
+          "examples": [
+            { "jp": "銀行でお金を下ろします。", "en": "I withdraw money at the bank." }
+          ]
+        },
+        {
+          "id": "byouin",
+          "kanji": "病院",
+          "reading": "びょういん",
+          "english": "hospital",
+          "examples": [
+            { "jp": "病院に行きます。", "en": "I go to the hospital." }
+          ]
+        },
+        {
+          "id": "yakkyoku",
+          "kanji": "薬局",
+          "reading": "やっきょく",
+          "english": "pharmacy",
+          "examples": [
+            { "jp": "薬局で薬を買います。", "en": "I buy medicine at the pharmacy." }
+          ]
+        },
+        {
+          "id": "taiikukan",
+          "kanji": "体育館",
+          "reading": "たいいくかん",
+          "english": "gym",
+          "examples": [
+            { "jp": "体育館で運動します。", "en": "I exercise in the gym." }
+          ]
+        },
+        {
+          "id": "tenisu_kouto",
+          "kanji": "テニスコート",
+          "reading": "",
+          "english": "tennis court",
+          "examples": [
+            { "jp": "テニスコートでテニスをします。", "en": "I play tennis at the tennis court." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hobbies",
+      "name": "Hobbies",
+      "words": [
+        {
+          "id": "eiga",
+          "kanji": "映画",
+          "reading": "えいが",
+          "english": "movie",
+          "examples": [
+            { "jp": "映画を見るのが好きです。", "en": "I like watching movies." }
+          ]
+        },
+        {
+          "id": "ongaku",
+          "kanji": "音楽",
+          "reading": "おんがく",
+          "english": "music",
+          "examples": [
+            { "jp": "音楽を聞きます。", "en": "I listen to music." }
+          ]
+        },
+        {
+          "id": "ryokou",
+          "kanji": "旅行",
+          "reading": "りょこう",
+          "english": "travel",
+          "examples": [
+            { "jp": "日本へ旅行します。", "en": "I travel to Japan." }
+          ]
+        },
+        {
+          "id": "supootsu",
+          "kanji": "スポーツ",
+          "reading": "",
+          "english": "sports",
+          "examples": [
+            { "jp": "スポーツが好きです。", "en": "I like sports." }
+          ]
+        },
+        {
+          "id": "yomu",
+          "kanji": "読む",
+          "reading": "よむ",
+          "english": "to read",
+          "examples": [
+            { "jp": "本を読みます。", "en": "I read books." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "weather",
+      "name": "Weather",
+      "words": [
+        {
+          "id": "ame",
+          "kanji": "雨",
+          "reading": "あめ",
+          "english": "rain",
+          "examples": [
+            { "jp": "今日は雨です。", "en": "It is raining today." }
+          ]
+        },
+        {
+          "id": "yuki",
+          "kanji": "雪",
+          "reading": "ゆき",
+          "english": "snow",
+          "examples": [
+            { "jp": "雪が降っています。", "en": "It is snowing." }
+          ]
+        },
+        {
+          "id": "hare",
+          "kanji": "晴れ",
+          "reading": "はれ",
+          "english": "clear weather",
+          "examples": [
+            { "jp": "今日は晴れです。", "en": "It is clear today." }
+          ]
+        },
+        {
+          "id": "kumori",
+          "kanji": "曇り",
+          "reading": "くもり",
+          "english": "cloudy",
+          "examples": [
+            { "jp": "明日は曇りです。", "en": "Tomorrow will be cloudy." }
+          ]
+        },
+        {
+          "id": "kaze",
+          "kanji": "風",
+          "reading": "かぜ",
+          "english": "wind",
+          "examples": [
+            { "jp": "風が強いです。", "en": "The wind is strong." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "school_life",
+      "name": "School Life",
+      "words": [
+        {
+          "id": "shukudai",
+          "kanji": "宿題",
+          "reading": "しゅくだい",
+          "english": "homework",
+          "examples": [
+            { "jp": "宿題をします。", "en": "I do my homework." }
+          ]
+        },
+        {
+          "id": "jugyou",
+          "kanji": "授業",
+          "reading": "じゅぎょう",
+          "english": "class",
+          "examples": [
+            { "jp": "授業に出ます。", "en": "I attend class." }
+          ]
+        },
+        {
+          "id": "tesuto",
+          "kanji": "テスト",
+          "reading": "",
+          "english": "test",
+          "examples": [
+            { "jp": "テストがあります。", "en": "There is a test." }
+          ]
+        },
+        {
+          "id": "benkyou",
+          "kanji": "勉強",
+          "reading": "べんきょう",
+          "english": "study",
+          "examples": [
+            { "jp": "日本語を勉強します。", "en": "I study Japanese." }
+          ]
+        },
+        {
+          "id": "kyoukasho",
+          "kanji": "教科書",
+          "reading": "きょうかしょ",
+          "english": "textbook",
+          "examples": [
+            { "jp": "教科書を読みます。", "en": "I read the textbook." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "money_shopping",
+      "name": "Money & Shopping",
+      "words": [
+        {
+          "id": "okane",
+          "kanji": "お金",
+          "reading": "おかね",
+          "english": "money",
+          "examples": [
+            { "jp": "お金があります。", "en": "I have money." }
+          ]
+        },
+        {
+          "id": "takai",
+          "kanji": "高い",
+          "reading": "たかい",
+          "english": "expensive",
+          "examples": [
+            { "jp": "このカメラは高いです。", "en": "This camera is expensive." }
+          ]
+        },
+        {
+          "id": "yasui",
+          "kanji": "安い",
+          "reading": "やすい",
+          "english": "cheap",
+          "examples": [
+            { "jp": "この店は安いです。", "en": "This store is cheap." }
+          ]
+        },
+        {
+          "id": "kau",
+          "kanji": "買う",
+          "reading": "かう",
+          "english": "to buy",
+          "examples": [
+            { "jp": "服を買います。", "en": "I buy clothes." }
+          ]
+        },
+        {
+          "id": "ureru",
+          "kanji": "売る",
+          "reading": "うる",
+          "english": "to sell",
+          "examples": [
+            { "jp": "店で本を売ります。", "en": "I sell books at the store." }
+          ]
+        }
       ]
     }
   ]

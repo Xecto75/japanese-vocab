@@ -83,6 +83,8 @@ class _FlashcardViewState extends State<FlashcardView>
   }
 
   Widget _buildCard(bool isFront) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final Color cardColor = isDark ? const Color(0xFF2F2F2F) : const Color(0xFF2F2F2F);
     final front =
         widget.direction == Direction.jpToEn ? _jpSide() : _enSide();
     final back =
@@ -93,6 +95,7 @@ class _FlashcardViewState extends State<FlashcardView>
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
       ),
+      color: cardColor,
       child: Container(
         width: double.infinity,
         height: double.infinity,

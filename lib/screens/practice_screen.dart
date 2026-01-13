@@ -25,6 +25,7 @@ class PracticeScreen extends StatefulWidget {
 class _PracticeScreenState extends State<PracticeScreen> {
   final Selector selector = Selector(cooldownSize: 3, alpha: 2.0);
   final TextEditingController controller = TextEditingController();
+  final FocusNode inputFocus = FocusNode();
 
   late VocabWord current;
   int index = 1;
@@ -39,11 +40,17 @@ class _PracticeScreenState extends State<PracticeScreen> {
   void initState() {
     super.initState();
     current = selector.pickNext(widget.words);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      inputFocus.requestFocus();
+    });
   }
+
+  
 
   @override
   void dispose() {
     controller.dispose();
+    inputFocus.dispose();
     super.dispose();
   }
 
@@ -55,105 +62,119 @@ class _PracticeScreenState extends State<PracticeScreen> {
     final bool showFurigana =
         Storage.prefsBox.get('show_furigana', defaultValue: true);
 
+    final bottomInset = MediaQuery.of(context).viewInsets.bottom;
+
     return WillPopScope(
       onWillPop: _confirmExit,
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text('Practice ($index/${widget.questions})'),
-          toolbarHeight: 100, // pushes title lower
+          toolbarHeight: 100,
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32),
-          child: Column(
-            children: [
-              const SizedBox(height: 24),
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 32),
+            child: Column(
+              children: [
+                const SizedBox(height: 24),
 
-              // ===== WORD AREA =====
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      prompt,
-                      style: const TextStyle(
-                        fontSize: 34,
-                        fontWeight: FontWeight.w600,
+                // ===== WORD AREA =====
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        prompt,
+                        style: const TextStyle(
+                          fontSize: 34,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
-                    ),
 
-                    const SizedBox(height: 4),
+                      const SizedBox(height: 4),
 
-                    // FURIGANA — reserved height even if empty
-                    SizedBox(
-                      height: 20,
-                      child: (widget.direction == Direction.jpToEn &&
-                              showFurigana &&
-                              current.reading.isNotEmpty)
-                          ? Text(
-                              current.reading,
-                              style: const TextStyle(
-                                fontSize: 18,
-                                color: Colors.grey,
-                              ),
-                              textAlign: TextAlign.center,
-                            )
-                          : const SizedBox(),
-                    ),
-                  ],
+                      // FURIGANA — reserved height
+                      SizedBox(
+                        height: 30,
+                        child: (widget.direction == Direction.jpToEn &&
+                                showFurigana &&
+                                current.reading.isNotEmpty)
+                            ? Text(
+                                current.reading,
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.grey,
+                                ),
+                                textAlign: TextAlign.center,
+                              )
+                            : const SizedBox(),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
 
-              // ===== INPUT =====
-              TextField(
-                controller: controller,
-                enabled: !answered,
-                decoration: InputDecoration(
-                  labelText: widget.direction == Direction.jpToEn
-                      ? 'Type English'
-                      : 'Type Japanese',
-                  border: const OutlineInputBorder(),
+                // ===== INPUT + BUTTON + FEEDBACK (keyboard-aware) =====
+                AnimatedPadding(
+                  duration: const Duration(milliseconds: 200),
+                  curve: Curves.easeOut,
+                  padding: EdgeInsets.only(bottom: bottomInset),
+                  child: Column(
+                    children: [
+                      TextField(
+                        controller: controller,
+                        focusNode: inputFocus,
+                        enabled: !answered,
+                        decoration: InputDecoration(
+                          labelText: widget.direction == Direction.jpToEn
+                              ? 'Type English'
+                              : 'Type Japanese',
+                          border: const OutlineInputBorder(),
+                        ),
+                        textAlign: TextAlign.center,
+                        onSubmitted: (_) => !answered ? _submit() : null,
+                      ),
+
+                      const SizedBox(height: 20),
+
+                      // ===== FEEDBACK (reserved space) =====
+                      SizedBox(
+                        height: 48,
+                        child: Center(
+                          child: answered
+                              ? Text(
+                                  feedback!,
+                                  textAlign: TextAlign.center,
+                                )
+                              : const SizedBox(),
+                        ),
+                      ),
+
+                      const SizedBox(height: 12),
+
+                      SizedBox(
+                        width: double.infinity,
+                        height: 44,
+                        child: ElevatedButton(
+                          onPressed: answered ? _next : _submit,
+                          child: Text(answered ? 'Next' : 'Submit'),
+                        ),
+                      ),
+
+                      const SizedBox(height: 24),
+
+                      Text(
+                        'Mastery: ${Repo.getMastery(current.id).value}%',
+                        style: const TextStyle(fontSize: 14),
+                      ),
+
+                      const SizedBox(height: 40),
+                    ],
+                  ),
                 ),
-                textAlign: TextAlign.center,
-                onSubmitted: (_) => !answered ? _submit() : null,
-              ),
-
-              const SizedBox(height: 20),
-
-              // ===== FEEDBACK (reserved space) =====
-              SizedBox(
-                height: 48,
-                child: Center(
-                  child: answered
-                      ? Text(
-                          feedback!,
-                          textAlign: TextAlign.center,
-                        )
-                      : const SizedBox(),
-                ),
-              ),
-              const SizedBox(height: 12),
-
-              // ===== BUTTON =====
-              SizedBox(
-                width: double.infinity,
-                height: 44,
-                child: ElevatedButton(
-                  onPressed: answered ? _next : _submit,
-                  child: Text(answered ? 'Next' : 'Submit'),
-                ),
-              ),
-
-              const SizedBox(height: 150),
-
-              // ===== MASTERY =====
-              Text(
-                'Mastery: ${Repo.getMastery(current.id).value}%',
-                style: const TextStyle(fontSize: 14),
-              ),
-
-              const SizedBox(height: 16),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -201,13 +222,30 @@ class _PracticeScreenState extends State<PracticeScreen> {
           .map((s) => s.trim().toLowerCase())
           .where((s) => s.isNotEmpty)
           .toList();
+
       return accepted.any((a) => input == a);
-    } else {
-      if (w.reading.isNotEmpty) {
-        return input == w.kanji.toLowerCase() ||
-            input == w.reading.toLowerCase();
+    }
+
+    final bool showFurigana =
+        Storage.prefsBox.get('show_furigana', defaultValue: true);
+
+    final hasKanji = w.kanji.isNotEmpty && w.kanji != w.reading;
+
+    final kanji = w.kanji.toLowerCase();
+    final reading = w.reading.toLowerCase();
+
+    if (showFurigana) {
+      if (hasKanji) {
+        return input == kanji || input == reading;
+      } else {
+        return input == reading;
       }
-      return input == w.kanji.toLowerCase();
+    } else {
+      if (hasKanji) {
+        return input == kanji;
+      } else {
+        return input == reading;
+      }
     }
   }
 
@@ -264,6 +302,9 @@ class _PracticeScreenState extends State<PracticeScreen> {
       feedback = null;
       answered = false;
       current = selector.pickNext(widget.words);
+    });
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      inputFocus.requestFocus();
     });
   }
 }

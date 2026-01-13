@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('JP Vocab', style: TextStyle(fontSize: 30)),
+        title: const Text('Memori', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700)),
         toolbarHeight: 100, 
         actions: [
           IconButton(

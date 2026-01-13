@@ -13,11 +13,11 @@ Future<void> main() async {
   await Storage.init();
   await Seed.ensureSeeded();
 
-  runApp(const JpVocabApp());
+  runApp(const MemoriApp());
 }
 
-class JpVocabApp extends StatelessWidget {
-  const JpVocabApp({super.key});
+class MemoriApp extends StatelessWidget {
+  const MemoriApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class JpVocabApp extends StatelessWidget {
       builder: (_, themeMode, __) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'JP Vocab',
+          title: 'Memori',
 
           // Which theme (light/dark) is active
           themeMode: themeMode,
@@ -48,6 +48,22 @@ class JpVocabApp extends StatelessWidget {
               brightness: Brightness.light,
             ).copyWith(
               surface: Colors.white,      // 👈 Page backgrounds (Scaffold, cards)
+            ),
+
+            // SWITCH (settings toggles)
+            switchTheme: SwitchThemeData(
+              thumbColor: MaterialStateProperty.resolveWith((states) {
+                if (states.contains(MaterialState.selected)) {
+                  return Colors.indigo; // 👈 ON knob
+                }
+                return Colors.grey.shade300;     // 👈 OFF knob
+              }),
+              trackColor: MaterialStateProperty.resolveWith((states) {
+                if (states.contains(MaterialState.selected)) {
+                  return Colors.indigo.withOpacity(0.5); // 👈 ON track
+                }
+                return Colors.grey.shade400;            // 👈 OFF track
+              }),
             ),
 
             // BUTTON COLOR (Start, Submit, etc)

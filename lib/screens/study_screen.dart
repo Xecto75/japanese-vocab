@@ -41,7 +41,7 @@ class _StudyScreenState extends State<StudyScreen> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            const SizedBox(height: 200),
+            const SizedBox(height: 150),
             SizedBox(
               height: 300,
               child: FlashcardView(
@@ -52,7 +52,7 @@ class _StudyScreenState extends State<StudyScreen> {
                 onTapCard: () => setState(() => revealed = true),
               ),
             ),
-            const SizedBox(height: 100),
+            const SizedBox(height: 30),
 
             if (!revealed)
               SizedBox(
@@ -93,7 +93,7 @@ class _StudyScreenState extends State<StudyScreen> {
               'Mastery: ${Repo.getMastery(current.id).value}%',
               style: const TextStyle(fontSize: 14),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 24),
           ],
         ),
       ),

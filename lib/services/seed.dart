@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'storage.dart';
 
 class Seed {
-  static const seededKey = '_seeded_v5';
+  static const seededKey = '_seeded_v7';
 
   static Future<void> ensureSeeded() async {
     final already = Storage.listsBox.get(seededKey) == true;

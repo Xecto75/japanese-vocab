@@ -51,8 +51,6 @@ class DictionaryScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-
-            // Rounded divider
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 24),
               height: 2,
@@ -61,7 +59,6 @@ class DictionaryScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(999),
               ),
             ),
-
             const SizedBox(height: 16),
           ];
         }).toList(),
@@ -72,7 +69,6 @@ class DictionaryScreen extends StatelessWidget {
 
 class _SectionHeader extends StatelessWidget {
   final String title;
-
   const _SectionHeader({required this.title});
 
   @override
@@ -81,10 +77,7 @@ class _SectionHeader extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
       child: Text(
         title,
-        style: const TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
-        ),
+        style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
       ),
     );
   }
@@ -92,30 +85,33 @@ class _SectionHeader extends StatelessWidget {
 
 class _WordBlock extends StatelessWidget {
   final VocabWord word;
-
   const _WordBlock({required this.word});
 
   @override
   Widget build(BuildContext context) {
     final mastery = Repo.getMastery(word.id);
-    final opacity = mastery.seen ? 1.0 : 0.3;
     final masteryValue = mastery.value.clamp(0, 100) / 100.0;
+    final seen = mastery.seen;
 
     final scheme = Theme.of(context).colorScheme;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
+    final Color cardColor = isDark
+        ? (seen ? const Color(0xFF2F2F2F) : const Color(0xFF272727))
+        : (seen ? const Color(0xFFE1E1E1) : const Color(0xFFECECEC));
+
+    final double contentOpacity = seen ? 1.0 : 0.45;
+
     return GestureDetector(
       onTap: () => _showDetails(context),
-      child: Opacity(
-        opacity: opacity,
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 8),
-          decoration: BoxDecoration(
-            color: isDark
-                ? const Color(0xFF2A2A2E)   // slightly lighter than black
-                : const Color(0xFFF2F2F4),  // slightly darker than white
-            borderRadius: BorderRadius.circular(10),
-          ),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 8),
+        decoration: BoxDecoration(
+          color: cardColor,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Opacity(
+          opacity: contentOpacity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -130,7 +126,6 @@ class _WordBlock extends StatelessWidget {
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
-
               Text(
                 word.english,
                 textAlign: TextAlign.center,
@@ -141,9 +136,7 @@ class _WordBlock extends StatelessWidget {
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
-
               const SizedBox(height: 10),
-
               SizedBox(
                 width: 70,
                 child: ClipRRect(
@@ -196,10 +189,7 @@ class _WordBlock extends StatelessWidget {
           children: [
             Text(word.english),
             const SizedBox(height: 12),
-            const Text(
-              'Examples',
-              style: TextStyle(fontWeight: FontWeight.w600),
-            ),
+            const Text('Examples', style: TextStyle(fontWeight: FontWeight.w600)),
             const SizedBox(height: 6),
             ...word.examples.map(
               (e) => Padding(
