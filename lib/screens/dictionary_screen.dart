@@ -160,64 +160,88 @@ class _WordBlock extends StatelessWidget {
   void _showDetails(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
 
-    showDialog(
+    showGeneralDialog<void>(
       context: context,
-      builder: (_) => AlertDialog(
-        title: RichText(
-          text: TextSpan(
-            style: TextStyle(
-              color: scheme.onSurface,
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-            ),
-            children: [
-              TextSpan(text: word.kanji),
-              TextSpan(
-                text: ' (${word.reading})',
-                style: TextStyle(
-                  fontSize: 14,
-                  color: scheme.onSurface.withOpacity(0.6),
-                  fontWeight: FontWeight.normal,
-                ),
-              ),
-            ],
-          ),
-        ),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(word.english),
-            const SizedBox(height: 12),
-            const Text('Examples', style: TextStyle(fontWeight: FontWeight.w600)),
-            const SizedBox(height: 6),
-            ...word.examples.map(
-              (e) => Padding(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+      barrierDismissible: true,
+      barrierLabel: 'Word details',
+      barrierColor: Colors.black54,
+      transitionDuration: const Duration(milliseconds: 220),
+      pageBuilder: (context, anim1, anim2) {
+        return const SizedBox();
+      },
+      transitionBuilder: (context, animation, secondary, child) {
+        final scale = CurvedAnimation(
+          parent: animation,
+          curve: Curves.easeOutBack,
+        );
+
+        return Transform.scale(
+          scale: scale.value,
+          child: Opacity(
+            opacity: animation.value,
+            child: AlertDialog(
+              title: RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                    color: scheme.onSurface,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
                   children: [
-                    Text(e.jp),
-                    Text(
-                      e.en,
-                      style: TextStyle(
-                        color: scheme.onSurface.withOpacity(0.6),
-                        fontSize: 12,
+                    TextSpan(text: word.kanji),
+                    if (word.reading.isNotEmpty)
+                      TextSpan(
+                        text: ' (${word.reading})',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: scheme.onSurface.withOpacity(0.6),
+                          fontWeight: FontWeight.normal,
+                        ),
                       ),
-                    ),
                   ],
                 ),
               ),
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(word.english),
+                  const SizedBox(height: 12),
+                  const Text(
+                    'Examples',
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  const SizedBox(height: 6),
+                  ...word.examples.map(
+                    (e) => Padding(
+                      padding: const EdgeInsets.only(bottom: 8),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(e.jp),
+                          Text(
+                            e.en,
+                            style: TextStyle(
+                              color: scheme.onSurface.withOpacity(0.6),
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: const Text('Close'),
+                ),
+              ],
             ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Close'),
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

@@ -45,8 +45,6 @@ class _PracticeScreenState extends State<PracticeScreen> {
     });
   }
 
-  
-
   @override
   void dispose() {
     controller.dispose();
@@ -79,7 +77,6 @@ class _PracticeScreenState extends State<PracticeScreen> {
               children: [
                 const SizedBox(height: 24),
 
-                // ===== WORD AREA =====
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -92,10 +89,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
                         ),
                         textAlign: TextAlign.center,
                       ),
-
                       const SizedBox(height: 4),
-
-                      // FURIGANA — reserved height
                       SizedBox(
                         height: 30,
                         child: (widget.direction == Direction.jpToEn &&
@@ -115,7 +109,6 @@ class _PracticeScreenState extends State<PracticeScreen> {
                   ),
                 ),
 
-                // ===== INPUT + BUTTON + FEEDBACK (keyboard-aware) =====
                 AnimatedPadding(
                   duration: const Duration(milliseconds: 200),
                   curve: Curves.easeOut,
@@ -138,15 +131,11 @@ class _PracticeScreenState extends State<PracticeScreen> {
 
                       const SizedBox(height: 20),
 
-                      // ===== FEEDBACK (reserved space) =====
                       SizedBox(
                         height: 48,
                         child: Center(
                           child: answered
-                              ? Text(
-                                  feedback!,
-                                  textAlign: TextAlign.center,
-                                )
+                              ? Text(feedback!, textAlign: TextAlign.center)
                               : const SizedBox(),
                         ),
                       ),
@@ -182,28 +171,48 @@ class _PracticeScreenState extends State<PracticeScreen> {
   }
 
   // =====================
-  // BACK CONFIRMATION
+  // BACK CONFIRMATION (POP ANIMATION)
   // =====================
   Future<bool> _confirmExit() async {
-    final result = await showDialog<bool>(
+    final result = await showGeneralDialog<bool>(
       context: context,
-      builder: (_) => AlertDialog(
-        title: const Text('Quit practice?'),
-        content: const Text(
-          'Are you sure you want to quit?\nYour progress for this session will be lost.',
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context, false),
-            child: const Text('Resume'),
+      barrierDismissible: true,
+      barrierLabel: "Quit",
+      barrierColor: Colors.black54,
+      transitionDuration: const Duration(milliseconds: 220),
+      pageBuilder: (context, anim1, anim2) {
+        return const SizedBox();
+      },
+      transitionBuilder: (context, animation, secondary, _) {
+        final scale = CurvedAnimation(
+          parent: animation,
+          curve: Curves.easeOutBack,
+        );
+
+        return Transform.scale(
+          scale: scale.value,
+          child: Opacity(
+            opacity: animation.value,
+            child: AlertDialog(
+              title: const Text('Quit practice?'),
+              content: const Text(
+                'Are you sure you want to quit?\nYour progress for this session will be lost.',
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context, false),
+                  child: const Text('Resume'),
+                ),
+                TextButton(
+                  onPressed: () => Navigator.pop(context, true),
+                  style: TextButton.styleFrom(foregroundColor: Colors.red),
+                  child: const Text('Quit'),
+                ),
+              ],
+            ),
           ),
-          TextButton(
-            onPressed: () => Navigator.pop(context, true),
-            style: TextButton.styleFrom(foregroundColor: Colors.red),
-            child: const Text('Quit'),
-          ),
-        ],
-      ),
+        );
+      },
     );
 
     return result ?? false;
@@ -222,7 +231,6 @@ class _PracticeScreenState extends State<PracticeScreen> {
           .map((s) => s.trim().toLowerCase())
           .where((s) => s.isNotEmpty)
           .toList();
-
       return accepted.any((a) => input == a);
     }
 
@@ -235,39 +243,23 @@ class _PracticeScreenState extends State<PracticeScreen> {
     final reading = w.reading.toLowerCase();
 
     if (showFurigana) {
-      if (hasKanji) {
-        return input == kanji || input == reading;
-      } else {
-        return input == reading;
-      }
+      return hasKanji ? input == kanji || input == reading : input == reading;
     } else {
-      if (hasKanji) {
-        return input == kanji;
-      } else {
-        return input == reading;
-      }
+      return hasKanji ? input == kanji : input == reading;
     }
   }
 
-  // =====================
-  // SUBMIT
-  // =====================
   void _submit() {
     final ok = _isCorrectAnswer(controller.text, current);
     Repo.applyPracticeResult(wordId: current.id, correct: ok);
 
     setState(() {
       answered = true;
-
       final expected = widget.direction == Direction.jpToEn
           ? current.english
           : current.kanji +
               (current.reading.isNotEmpty ? ' / ${current.reading}' : '');
-
-      feedback = ok
-          ? '✅ Correct'
-          : '❌ Incorrect\nExpected: $expected';
-
+      feedback = ok ? '✅ Correct' : '❌ Incorrect\nExpected: $expected';
       if (ok) {
         correctCount++;
         Haptics.success();
@@ -278,9 +270,6 @@ class _PracticeScreenState extends State<PracticeScreen> {
     });
   }
 
-  // =====================
-  // NEXT
-  // =====================
   void _next() {
     if (index >= widget.questions) {
       Navigator.pushReplacement(
@@ -303,6 +292,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
       answered = false;
       current = selector.pickNext(widget.words);
     });
+
     WidgetsBinding.instance.addPostFrameCallback((_) {
       inputFocus.requestFocus();
     });
