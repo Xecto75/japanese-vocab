@@ -54,11 +54,14 @@ class _PracticeScreenState extends State<PracticeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final prompt =
-        widget.direction == Direction.jpToEn ? current.kanji : current.english;
+    final prompt = widget.direction == Direction.jpToEn
+        ? current.kanji
+        : current.english;
 
-    final bool showFurigana =
-        Storage.prefsBox.get('show_furigana', defaultValue: true);
+    final bool showFurigana = Storage.prefsBox.get(
+      'show_furigana',
+      defaultValue: true,
+    );
 
     final bottomInset = MediaQuery.of(context).viewInsets.bottom;
 
@@ -69,6 +72,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
         appBar: AppBar(
           title: Text('Practice ($index/${widget.questions})'),
           toolbarHeight: 100,
+          centerTitle: true,
         ),
         body: SafeArea(
           child: Padding(
@@ -92,7 +96,8 @@ class _PracticeScreenState extends State<PracticeScreen> {
                       const SizedBox(height: 4),
                       SizedBox(
                         height: 30,
-                        child: (widget.direction == Direction.jpToEn &&
+                        child:
+                            (widget.direction == Direction.jpToEn &&
                                 showFurigana &&
                                 current.reading.isNotEmpty)
                             ? Text(
@@ -234,8 +239,10 @@ class _PracticeScreenState extends State<PracticeScreen> {
       return accepted.any((a) => input == a);
     }
 
-    final bool showFurigana =
-        Storage.prefsBox.get('show_furigana', defaultValue: true);
+    final bool showFurigana = Storage.prefsBox.get(
+      'show_furigana',
+      defaultValue: true,
+    );
 
     final hasKanji = w.kanji.isNotEmpty && w.kanji != w.reading;
 
@@ -258,7 +265,7 @@ class _PracticeScreenState extends State<PracticeScreen> {
       final expected = widget.direction == Direction.jpToEn
           ? current.english
           : current.kanji +
-              (current.reading.isNotEmpty ? ' / ${current.reading}' : '');
+                (current.reading.isNotEmpty ? ' / ${current.reading}' : '');
       feedback = ok ? '✅ Correct' : '❌ Incorrect\nExpected: $expected';
       if (ok) {
         correctCount++;

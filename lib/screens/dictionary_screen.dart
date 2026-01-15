@@ -20,13 +20,14 @@ class DictionaryScreen extends StatelessWidget {
     final int columns = width >= 1000
         ? 5
         : width >= 750
-            ? 4
-            : 3;
+        ? 4
+        : 3;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Dictionary'),
         toolbarHeight: 100,
+        centerTitle: true,
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 12),
@@ -55,7 +56,9 @@ class DictionaryScreen extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 24),
               height: 2,
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.15),
+                color: Theme.of(
+                  context,
+                ).colorScheme.onSurface.withOpacity(0.15),
                 borderRadius: BorderRadius.circular(999),
               ),
             ),
@@ -145,8 +148,9 @@ class _WordBlock extends StatelessWidget {
                     value: masteryValue,
                     minHeight: 6,
                     backgroundColor: scheme.onSurface.withOpacity(0.15),
-                    valueColor:
-                        const AlwaysStoppedAnimation<Color>(Colors.amber),
+                    valueColor: const AlwaysStoppedAnimation<Color>(
+                      Colors.amber,
+                    ),
                   ),
                 ),
               ),

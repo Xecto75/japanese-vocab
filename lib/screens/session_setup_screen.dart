@@ -4,7 +4,6 @@ import '../services/repo.dart';
 import 'study_screen.dart';
 import 'practice_screen.dart';
 
-
 class SessionSetupScreen extends StatefulWidget {
   final SessionMode mode;
   const SessionSetupScreen({super.key, required this.mode});
@@ -36,14 +35,12 @@ class _SessionSetupScreenState extends State<SessionSetupScreen> {
   @override
   Widget build(BuildContext context) {
     final lists = Repo.getAllLists();
-    final title =
-        widget.mode == SessionMode.learn ? 'Learn Setup' : 'Practice Setup';
+    final title = widget.mode == SessionMode.learn
+        ? 'Learn Setup'
+        : 'Practice Setup';
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-        toolbarHeight: 100, 
-      ),
+      appBar: AppBar(title: Text(title), toolbarHeight: 100, centerTitle: true),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -111,10 +108,7 @@ class _SessionSetupScreenState extends State<SessionSetupScreen> {
               const SizedBox(height: 24),
               const Text(
                 'Number of questions',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                ),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
               ),
               const SizedBox(height: 8),
               Text('$practiceQuestions questions'),
@@ -141,13 +135,14 @@ class _SessionSetupScreenState extends State<SessionSetupScreen> {
                 width: 200,
                 height: 44,
                 child: ElevatedButton(
-                  onPressed:
-                      selectedListIds.isEmpty ? null : () => _start(context),
+                  onPressed: selectedListIds.isEmpty
+                      ? null
+                      : () => _start(context),
                   child: const Text('Start'),
                 ),
               ),
             ),
-            const SizedBox(height: 28)
+            const SizedBox(height: 28),
           ],
         ),
       ),
@@ -178,10 +173,7 @@ class _SessionSetupScreenState extends State<SessionSetupScreen> {
                 children: [
                   const Text(
                     'Select lists',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                   ),
                   const SizedBox(height: 12),
 
@@ -204,10 +196,7 @@ class _SessionSetupScreenState extends State<SessionSetupScreen> {
                               }
                             });
 
-                            _prefs.put(
-                              _listsKey,
-                              selectedListIds.toList(),
-                            );
+                            _prefs.put(_listsKey, selectedListIds.toList());
 
                             setState(() {});
                           },
@@ -237,8 +226,6 @@ class _SessionSetupScreenState extends State<SessionSetupScreen> {
     );
   }
 
-
-
   // =====================
   // START SESSION
   // =====================
@@ -256,8 +243,7 @@ class _SessionSetupScreenState extends State<SessionSetupScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (_) =>
-              StudyScreen(words: words, direction: direction),
+          builder: (_) => StudyScreen(words: words, direction: direction),
         ),
       );
     } else {

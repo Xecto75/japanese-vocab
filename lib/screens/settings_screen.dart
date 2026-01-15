@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../services/storage.dart';
 import '../services/haptics.dart';
 import '../services/theme_controller.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -16,10 +17,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
   late bool notifications;
   late bool vibration;
 
+  void _openPrivacyPolicy() async {
+    final url = Uri.parse("https://xecto75.github.io/screen-stamina/");
+    if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+      throw "Could not open privacy policy";
+    }
+  }
+
   @override
   void initState() {
     super.initState();
-    
 
     // ✅ Load values from Hive (with defaults)
     final prefs = Storage.prefsBox;
@@ -36,7 +43,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Settings'),
-        toolbarHeight: 100, 
+        toolbarHeight: 100,
+        centerTitle: true,
       ),
       body: ListView(
         children: [
@@ -50,8 +58,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           SwitchListTile(
             title: const Text('Kanji helper (furigana)'),
-            subtitle:
-                const Text('Show hiragana under kanji'),
+            subtitle: const Text('Show hiragana under kanji'),
             value: showFurigana,
             onChanged: (v) {
               setState(() => showFurigana = v);
@@ -76,6 +83,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 Haptics.light();
               }
             },
+          ),
+          const SizedBox(height: 350),
+          TextButton(
+            onPressed: _openPrivacyPolicy,
+            child: const Text(
+              "Privacy Policy",
+              style: TextStyle(color: Colors.black, fontSize: 16),
+            ),
           ),
         ],
       ),

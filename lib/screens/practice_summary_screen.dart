@@ -20,7 +20,8 @@ class PracticeSummaryScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Session Summary'),
-        toolbarHeight: 100, 
+        toolbarHeight: 100,
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -34,12 +35,17 @@ class PracticeSummaryScreen extends StatelessWidget {
             if (missed.isEmpty)
               const Text('Perfect! No missed words. 🎉')
             else ...[
-              const Text('Missed words', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+              const Text(
+                'Missed words',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+              ),
               const SizedBox(height: 8),
-              ...missed.map((w) => ListTile(
-                    title: Text(w.kanji),
-                    subtitle: Text('${w.reading} — ${w.english}'),
-                  )),
+              ...missed.map(
+                (w) => ListTile(
+                  title: Text(w.kanji),
+                  subtitle: Text('${w.reading} — ${w.english}'),
+                ),
+              ),
             ],
             const SizedBox(height: 16),
             SizedBox(

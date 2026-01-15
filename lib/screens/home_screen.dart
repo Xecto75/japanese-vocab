@@ -11,8 +11,12 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Memori', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700)),
-        toolbarHeight: 100, 
+        title: const Text(
+          'Memori',
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
+        ),
+        toolbarHeight: 100,
+        centerTitle: true,
         actions: [
           IconButton(
             icon: const Icon(Icons.settings, size: 40),
@@ -63,9 +67,7 @@ class HomeScreen extends StatelessWidget {
                   label: 'Dictionary',
                   onTap: () => Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (_) => const DictionaryScreen(),
-                    ),
+                    MaterialPageRoute(builder: (_) => const DictionaryScreen()),
                   ),
                 ),
                 const SizedBox(height: 50),
@@ -85,10 +87,7 @@ class HomeScreen extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       height: 44, // smaller button, consistent with other screens
-      child: ElevatedButton(
-        onPressed: onTap,
-        child: Text(label),
-      ),
+      child: ElevatedButton(onPressed: onTap, child: Text(label)),
     );
   }
 }

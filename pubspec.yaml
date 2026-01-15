@@ -1,6 +1,6 @@
 name: japanese_vocab
 description: "A tool to memorize japanese vocab"
-publish_to: 'none'
+publish_to: "none"
 
 version: 1.0.0+1
 
@@ -8,6 +8,7 @@ environment:
   sdk: ^3.10.4
 
 dependencies:
+  url_launcher: ^6.2.2
   flutter:
     sdk: flutter
   hive: ^2.2.3

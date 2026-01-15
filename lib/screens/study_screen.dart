@@ -8,11 +8,7 @@ class StudyScreen extends StatefulWidget {
   final List<VocabWord> words;
   final Direction direction;
 
-  const StudyScreen({
-    super.key,
-    required this.words,
-    required this.direction,
-  });
+  const StudyScreen({super.key, required this.words, required this.direction});
 
   @override
   State<StudyScreen> createState() => _StudyScreenState();
@@ -35,7 +31,8 @@ class _StudyScreenState extends State<StudyScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Learn (Flashcards)'),
-        toolbarHeight: 100, 
+        toolbarHeight: 100,
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
