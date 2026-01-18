@@ -28,7 +28,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
   void initState() {
     super.initState();
 
-    // ✅ Load values from Hive (with defaults)
     final prefs = Storage.prefsBox;
     darkMode = prefs.get('dark_mode', defaultValue: false);
     showFurigana = prefs.get('show_furigana', defaultValue: true);
@@ -46,53 +45,70 @@ class _SettingsScreenState extends State<SettingsScreen> {
         toolbarHeight: 100,
         centerTitle: true,
       ),
-      body: ListView(
-        children: [
-          SwitchListTile(
-            title: const Text('Dark mode'),
-            value: darkMode,
-            onChanged: (v) {
-              setState(() => darkMode = v);
-              ThemeController.setDarkMode(v);
-            },
-          ),
-          SwitchListTile(
-            title: const Text('Kanji helper (furigana)'),
-            subtitle: const Text('Show hiragana under kanji'),
-            value: showFurigana,
-            onChanged: (v) {
-              setState(() => showFurigana = v);
-              prefs.put('show_furigana', v); // ✅ THIS WAS MISSING
-            },
-          ),
-          SwitchListTile(
-            title: const Text('Notifications'),
-            value: notifications,
-            onChanged: (v) {
-              setState(() => notifications = v);
-              prefs.put('notifications', v);
-            },
-          ),
-          SwitchListTile(
-            title: const Text('Vibration'),
-            value: vibration,
-            onChanged: (v) {
-              setState(() => vibration = v);
-              prefs.put('vibration', v);
-              if (v) {
-                Haptics.light();
-              }
-            },
-          ),
-          const SizedBox(height: 350),
-          TextButton(
-            onPressed: _openPrivacyPolicy,
-            child: const Text(
-              "Privacy Policy",
-              style: TextStyle(color: Colors.black, fontSize: 16),
+
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          return SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(minHeight: constraints.maxHeight),
+              child: IntrinsicHeight(
+                child: Column(
+                  children: [
+                    SwitchListTile(
+                      title: const Text('Dark mode'),
+                      value: darkMode,
+                      onChanged: (v) {
+                        setState(() => darkMode = v);
+                        ThemeController.setDarkMode(v);
+                      },
+                    ),
+                    SwitchListTile(
+                      title: const Text('Kanji helper (furigana)'),
+                      subtitle: const Text('Show hiragana under kanji'),
+                      value: showFurigana,
+                      onChanged: (v) {
+                        setState(() => showFurigana = v);
+                        prefs.put('show_furigana', v);
+                      },
+                    ),
+                    SwitchListTile(
+                      title: const Text('Notifications'),
+                      value: notifications,
+                      onChanged: (v) {
+                        setState(() => notifications = v);
+                        prefs.put('notifications', v);
+                      },
+                    ),
+                    SwitchListTile(
+                      title: const Text('Vibration'),
+                      value: vibration,
+                      onChanged: (v) {
+                        setState(() => vibration = v);
+                        prefs.put('vibration', v);
+                        if (v) {
+                          Haptics.light();
+                        }
+                      },
+                    ),
+
+                    const Spacer(), // 👈 this now works
+
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 24),
+                      child: TextButton(
+                        onPressed: _openPrivacyPolicy,
+                        child: const Text(
+                          "Privacy Policy",
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-          ),
-        ],
+          );
+        },
       ),
     );
   }
