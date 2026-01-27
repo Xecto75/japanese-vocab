@@ -18,7 +18,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   late bool vibration;
 
   void _openPrivacyPolicy() async {
-    final url = Uri.parse("https://xecto75.github.io/screen-stamina/");
+    final url = Uri.parse("https://xecto75.github.io/japanese-vocab/");
     if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
       throw "Could not open privacy policy";
     }
